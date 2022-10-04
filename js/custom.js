@@ -20,4 +20,4 @@ setTimeout(() => {
   }
 }, 100);
 
-// testing auto deployment
+// testing deployment
