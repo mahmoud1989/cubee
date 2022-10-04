@@ -20,4 +20,4 @@ setTimeout(() => {
   }
 }, 100);
 
-// testing git push
+// testing auto deployment
