@@ -21,16 +21,3 @@ setTimeout(() => {
 }, 100);
 
 // testing deployment
-
-var minLength = 8;
-var maxLength = 8;
-
-$("#password_1").on("keydown keyup change", function(){
-    var value = $(this).val();
-    if (value.length < minLength)
-        $("span").text("Please Enter 8 Letters");
-    else if (value.length > maxLength)
-        $("span").text("Please Enter 8 Letters");
-    else
-        $("span").text("Password is valid");
-});
