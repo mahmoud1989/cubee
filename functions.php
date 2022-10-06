@@ -148,3 +148,56 @@ return '';
 
 return $v_price;
 }
+
+// Change Password Hint
+add_filter( 'password_hint', function( $hint )
+{
+  return __( 'Hint: The password should be at least 8 characters long. Use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).' );
+} );
+
+
+add_filter( 'woocommerce_min_password_strength', 'reduce_min_strength_password_requirement' );
+function reduce_min_strength_password_requirement( $strength ) {
+    // 3 => Strong (default) | 2 => Medium | 1 => Weak | 0 => Very Weak (anything).
+    return 1; 
+}
+
+
+add_action('woocommerce_process_registration_errors', 'validatePasswordReg', 10, 2 );
+
+function validatePasswordReg( $errors, $user ) {
+    // change value here to set minimum required password chars
+    if(strlen($_POST['password']) == 8  ) {
+        $errors->add( 'woocommerce_password_error', __( 'Password must be 8 characters long. Use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).' ) );
+    }
+    return $errors;
+    }
+
+add_action('woocommerce_save_account_details_errors', 'validateProfileUpdate', 10, 2 );
+
+function validateProfileUpdate( $errors, $user ) {
+    // change value here to set minimum required password chars
+    if(strlen($_POST['password_2']) == 8  ) {
+        $errors->add( 'woocommerce_password_error', __( 'Password must be 8 characters long. Use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).' ) );
+    }
+    return $errors;
+    }
+
+add_action('woocommerce_password_reset', 'validatePasswordReset', 10, 2 );
+
+function validatePasswordReset( $errors, $user ) {
+    // change value here to set minimum required password chars -- uncomment the following two (2) lines to enable that
+    if(strlen($_POST['password_3']) == 8  ) {
+        $errors->add( 'woocommerce_password_error', __( 'Password must be 8 characters long. Use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).' ) );
+    }
+    return $errors;
+    }
+
+
+add_action( 'woocommerce_after_checkout_validation', 'minPassCharsCheckout', 10, 2 );
+function minPassCharsCheckout( $user ) {
+    // change value here to set minimum required password chars on checkout page account registration
+    if ( strlen( $_POST['account_password'] ) == 8  ) {
+        wc_add_notice( __( 'Password must be 8 characters long. Use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).', 'woocommerce' ), 'error' );
+    }
+}
