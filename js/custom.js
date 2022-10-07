@@ -18,6 +18,7 @@ setTimeout(() => {
   } else if (errorMsg.indexOf("account is already registered") > -1) {
     $("input#reg_email").parent().append(theMsg);
   }
-}, 100);
 
-// testing deployment
+  // Password field validation
+  $(".woocommerce-form-login input#password").attr("maxlength", "8");
+}, 100);
