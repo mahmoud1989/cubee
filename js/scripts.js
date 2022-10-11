@@ -10,12 +10,11 @@ setTimeout(() => {
 
   if (errorMsg.indexOf("username") > -1 || errorMsg.indexOf("Username") > -1) {
     $("input#username").parent().append(theMsg);
-  } else if (
-    errorMsg.indexOf("password") > -1 ||
-    errorMsg.indexOf("Password") > -1
-  ) {
-    $(".password-input").parent().append(theMsg);
-  } else if (errorMsg.indexOf("account is already registered") > -1) {
+  }
+  if (errorMsg.indexOf("password") > -1 || errorMsg.indexOf("Password") > -1) {
+    $("input#password").parent().append(theMsg);
+  }
+  if (errorMsg.indexOf("account is already registered") > -1) {
     $("input#reg_email").parent().append(theMsg);
   }
 

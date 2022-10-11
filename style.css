@@ -8,39 +8,39 @@ Version: 3.0
 
 /*************** ADD CUSTOM CSS HERE.   ***************/
 ul.woocommerce-error.message-wrapper {
-    transition: all .4s ease;
-/*     display: none; */
+  transition: all 0.4s ease;
+  /*     display: none; */
 }
 ul.woocommerce-error.message-wrapper {
-    font-size: 0.9em;
-    position: relative;
-    top: -10px;
-    left: 2px;
+  font-size: 0.9em;
+  position: relative;
+  top: -10px;
+  left: 2px;
 }
-.page-id-2544 a.button.product_type_variable.add_to_cart_button.button.add_to_cart.alt {
-    display: none;
+.page-id-2544
+  a.button.product_type_variable.add_to_cart_button.button.add_to_cart.alt {
+  display: none;
 }
 .page-id-2544 a.remove.remove_from_wishlist {
-    border: none;
-	color: transparent;
+  border: none;
+  color: transparent;
 }
 .page-id-2544 a.remove.remove_from_wishlist:before {
-    content: '\f2ed';
-    font-family: "Font Awesome 6 Free";
-	color: red;
+  content: "\f2ed";
+  font-family: "Font Awesome 6 Free";
+  color: red;
 }
 
 @media only screen and (max-width: 48em) {
-/*************** ADD MOBILE ONLY CSS HERE  ***************/
-ul.woocommerce-error.message-wrapper {
-    transition: all .4s ease;
-/*     display: none; */
-}
-ul.woocommerce-error.message-wrapper {
+  /*************** ADD MOBILE ONLY CSS HERE  ***************/
+  ul.woocommerce-error.message-wrapper {
+    transition: all 0.4s ease;
+    /*     display: none; */
+  }
+  ul.woocommerce-error.message-wrapper {
     font-size: 0.9em;
     position: relative;
     top: -10px;
     left: 2px;
-}
-
+  }
 }
