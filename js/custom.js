@@ -20,4 +20,4 @@ setTimeout(() => {
 
   // Password field validation
   $(".woocommerce-form-login input#password").attr("maxlength", "8");
-}, 100);
+}, 1000);
