@@ -26,6 +26,14 @@ setTimeout(() => {
   $(".woocommerce-form-login input#password").attr("minlength", "8");
 }, 1000);
 
+// Phone Number Field Validation
+function onlyNumberKey(evt) {
+  // Only ASCII character in that range allowed
+  var ASCIICode = evt.which ? evt.which : evt.keyCode;
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
+  return true;
+}
+
 // Edit Account Page
 let currentUrl = window.location.href;
 setTimeout(() => {
@@ -39,11 +47,5 @@ setTimeout(() => {
   } else if (currentUrl.indexOf("edit-address/billing") > -1) {
     // Edit Address/Billing
     $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
-    function onlyNumberKey(evt) {
-      // Only ASCII character in that range allowed
-      var ASCIICode = evt.which ? evt.which : evt.keyCode;
-      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
-      return true;
-    }
   }
 }, 200);
