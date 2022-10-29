@@ -29,11 +29,14 @@ setTimeout(() => {
 // Edit Account Page
 let currentUrl = window.location.href;
 if (currentUrl.indexOf("edit-account") > -1) {
+  // Edit Account Page
   $('label[for="password_current"]').text("Current password");
   $('label[for="password_1"]').text("New password");
 } else if (currentUrl.indexOf("customer-logout") > -1) {
+  // Logout Page
   $(".woocommerce-message a").css("color", "red");
-} else if (currentUrl.indexOf("edit-address/billing")) {
+} else if (currentUrl.indexOf("edit-address/billing") > -1) {
+  // Edit Address/Billing
   $("input#billing_phone").attr("onkeypress", "validate(event)");
   function validate(evt) {
     var theEvent = evt || window.event;
