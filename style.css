@@ -37,6 +37,11 @@ ul.woocommerce-error.message-wrapper {
   width: fit-content;
 }
 
+/*-- Edit Billing Address Page --*/
+.intl-tel-input {
+  width: 100%;
+}
+
 @media only screen and (max-width: 48em) {
   /*************** ADD MOBILE ONLY CSS HERE  ***************/
   ul.woocommerce-error.message-wrapper {
