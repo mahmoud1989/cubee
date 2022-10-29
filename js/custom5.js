@@ -38,9 +38,12 @@ setTimeout(() => {
     $(".woocommerce-message a").css("color", "red");
   } else if (currentUrl.indexOf("edit-address/billing") > -1) {
     // Edit Address/Billing
-    $("input#billing_phone").attr(
-      "oninput",
-      "this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*?)..*/g, '$1')"
-    );
+    $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
+    function onlyNumberKey(evt) {
+      // Only ASCII character in that range allowed
+      var ASCIICode = evt.which ? evt.which : evt.keyCode;
+      if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
+      return true;
+    }
   }
 }, 200);
