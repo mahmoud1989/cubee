@@ -65,6 +65,7 @@ setTimeout(() => {
     // Edit Address/Billing
     $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
     $("input#billing_phone").attr("value", "");
+    $("input#billing_phone").attr("maxlength", "12");
     $("head").append('<script src""></script>');
 
     // Country Code Selector
