@@ -61,7 +61,7 @@ setTimeout(() => {
     document.head.appendChild(countryCodeStyle);
     document.head.appendChild(countryCodeScript);
     // Edit Address/Billing
-    $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
+    // $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
     $("head").append('<script src""></script>');
   }
 }, 200);
