@@ -31,6 +31,12 @@ ul.woocommerce-error.message-wrapper {
   color: red;
 }
 
+/*-- ORDER CANCELLATION --*/
+.pi-cancel-request-submit-button {
+  background: red !important;
+  width: fit-content;
+}
+
 @media only screen and (max-width: 48em) {
   /*************** ADD MOBILE ONLY CSS HERE  ***************/
   ul.woocommerce-error.message-wrapper {
