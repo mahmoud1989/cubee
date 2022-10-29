@@ -56,5 +56,6 @@ setTimeout(() => {
         if (theEvent.preventDefault) theEvent.preventDefault();
       }
     }
+    validate(evt);
   }
 }, 200);
