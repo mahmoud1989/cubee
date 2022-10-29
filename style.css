@@ -34,7 +34,7 @@ ul.woocommerce-error.message-wrapper {
 /*-- ORDER CANCELLATION --*/
 .pi-cancel-request-submit-button {
   background: red !important;
-  width: fit-content;
+  width: fit-content !important;
 }
 
 /*-- Edit Billing Address Page --*/
