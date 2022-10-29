@@ -41,6 +41,9 @@ ul.woocommerce-error.message-wrapper {
 .intl-tel-input {
   width: 100%;
 }
+body.woocommerce-edit-address form li {
+  list-style-type: none;
+}
 
 @media only screen and (max-width: 48em) {
   /*************** ADD MOBILE ONLY CSS HERE  ***************/

@@ -81,5 +81,20 @@ setTimeout(() => {
         "+" + countryCode + " " + $("#billing_phone").val()
       );
     });
+
+    var errorField = $(".woocommerce-error");
+    var firstName = errorField.find('li[data-id="billing_first_name"]');
+    var lastName = errorField.find('li[data-id="billing_last_name"]');
+    var address1 = errorField.find('li[data-id="billing_address_1"]');
+    var city = errorField.find('li[data-id="billing_city"]');
+    var phone = errorField.find('li[data-id="billing_phone"]');
+    var email = errorField.find('li[data-id="billing_email"]');
+
+    $("#billing_first_name").after(firstName);
+    $("#billing_last_name").after(lastName);
+    $("#billing_address_1").after(address1);
+    $("#billing_city").after(city);
+    $("#billing_phone_field").after(phone);
+    $("#billing_email").after(email);
   }
 }, 200);
