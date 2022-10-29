@@ -37,7 +37,7 @@ function onlyNumberKey(evt) {
 // Generate Script and Styles
 var theSrc = [
   "/wp-content/themes/flatsome-child/vendors/js/intlTelInput.js",
-  "/wp-content/themes/flatsome-child/vendors/js/intlTelInput.css",
+  "/wp-content/themes/flatsome-child/vendors/css/intlTelInput.css",
 ];
 // Store Script
 let countryCodeScript = document.createElement("script");
