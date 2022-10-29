@@ -71,9 +71,8 @@ setTimeout(() => {
     window.intlTelInput(input, {
       // options here
     });
-
-    $(".iti__flag-container").click(function () {
-      var countryCode = $(".iti__selected-flag").attr("title");
+    $(".flag-container").click(function () {
+      var countryCode = $(".selected-flag").attr("title");
       var countryCode = countryCode.replace(/[^0-9]/g, "");
       $("#billing_phone").val("");
       $("#billing_phone").val(
