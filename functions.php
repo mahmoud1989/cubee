@@ -3,7 +3,7 @@
 
 add_action( 'wp_enqueue_scripts', 'webozza_assets' );
 function webozza_assets() {
-    wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/custom8.js', array( 'jquery' ) );
+    wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/custom9.js', array( 'jquery' ) );
 }
 
 /**

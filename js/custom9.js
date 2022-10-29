@@ -39,9 +39,11 @@ var theSrc = [
   "/wp-content/themes/flatsome-child/vendors/js/intlTelInput.js",
   "/wp-content/themes/flatsome-child/vendors/css/intlTelInput.css",
 ];
+
 // Store Script
 let countryCodeScript = document.createElement("script");
 countryCodeScript.setAttribute("src", theSrc[0]);
+
 // Store Stylesheet
 let countryCodeStyle = document.createElement("link");
 countryCodeStyle.setAttribute("rel", "stylesheet");
@@ -61,7 +63,22 @@ setTimeout(() => {
     document.head.appendChild(countryCodeStyle);
     document.head.appendChild(countryCodeScript);
     // Edit Address/Billing
-    // $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
+    $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
     $("head").append('<script src""></script>');
+
+    // Country Code Selector
+    var input = document.querySelector("#billing_phone");
+    window.intlTelInput(input, {
+      // options here
+    });
+
+    $(".iti__flag-container").click(function () {
+      var countryCode = $(".iti__selected-flag").attr("title");
+      var countryCode = countryCode.replace(/[^0-9]/g, "");
+      $("#billing_phone").val("");
+      $("#billing_phone").val(
+        "+" + countryCode + " " + $("#billing_phone").val()
+      );
+    });
   }
 }, 200);
