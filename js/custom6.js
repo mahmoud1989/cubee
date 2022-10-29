@@ -34,6 +34,19 @@ function onlyNumberKey(evt) {
   return true;
 }
 
+// Generate Script and Styles
+var theSrc = [
+  "/wp-content/themes/flatsome-child/vendors/js/intlTelInput.js",
+  "/wp-content/themes/flatsome-child/vendors/js/intlTelInput.css",
+];
+// Store Script
+let countryCodeScript = document.createElement("script");
+countryCodeScript.setAttribute("src", theSrc[0]);
+// Store Stylesheet
+let countryCodeStyle = document.createElement("link");
+countryCodeStyle.setAttribute("rel", "stylesheet");
+countryCodeStyle.setAttribute("href", theSrc[1]);
+
 // Edit Account Page
 let currentUrl = window.location.href;
 setTimeout(() => {
@@ -45,7 +58,10 @@ setTimeout(() => {
     // Logout Page
     $(".woocommerce-message a").css("color", "red");
   } else if (currentUrl.indexOf("edit-address/billing") > -1) {
+    document.head.appendChild(countryCodeStyle);
+    document.head.appendChild(countryCodeScript);
     // Edit Address/Billing
     $("input#billing_phone").attr("onkeypress", "return onlyNumberKey(event)");
+    $("head").append('<script src""></script>');
   }
 }, 200);
